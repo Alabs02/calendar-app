@@ -1,11 +1,7 @@
-import { Fragment } from 'react';
+import { Fragment } from "react";
 
 const ToolBar = () => {
-  return (
-    <Fragment>
-      
-    </Fragment>
-  );
-}
+  return <Fragment></Fragment>;
+};
 
 export { ToolBar as default };

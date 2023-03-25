@@ -1,5 +1,5 @@
 const themes = [
-  'light'
+  "light",
   // IN THE FUTURE WE CAN ADD DARK
 ];
 

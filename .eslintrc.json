@@ -1,6 +1,39 @@
 {
-  "extends": "react-app",
-  "plugins": ["prettier", "eslint-plugin-import-helpers"],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "standard"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project": "./tsconfig.json",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "prettier",
+    "react-hooks",
+    "@typescript-eslint",
+    "eslint-plugin-import-helpers"
+  ],
+  "settings": {
+    "react": { "version": "detect" }
+  },
   "rules": {
     "prettier/prettier": 0,
     "react-hooks/exhaustive-deps": "warn",

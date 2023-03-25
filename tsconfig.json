@@ -20,12 +20,16 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "sourceMap": true,
     "types": [
       "node"
     ],
+    "typeRoots": [
+      "node_modules/@types"
+    ]
   },
   "include": [
-    "src"
+    "src/**/*"
   ],
   "extends": "./tsconfig.paths.json"
 }

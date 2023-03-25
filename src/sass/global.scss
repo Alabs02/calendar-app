@@ -1,16 +1,16 @@
 // CORE STYLES
-@forward 'core';
+@forward "core";
 
 // NAVIGATION STYLES
-@forward 'navigation';
+@forward "navigation";
 
 // PAGES STYLES
-@forward 'pages';
+@forward "pages";
 
 /*
   =============================================
     GLOBALLY ACCESSIBLE STYLES
   =============================================
 */
-// MIXINS 
-@import 'mixins';
+// MIXINS
+@import "mixins";

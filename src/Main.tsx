@@ -1,21 +1,21 @@
 import React, { useEffect } from "react";
 
-// UTILS
-import { changeTheme } from './utils/controller';
-
 // ENUMS
-import { EThemes } from './enums';
+import { EThemes } from "./enums";
 
 // ROUTES
 import Routes from "./routes";
+
+// UTILS
+import { changeTheme } from "./utils/controller";
 
 function Main() {
   const hasTheme = !!document.documentElement.classList.length;
 
   useEffect(() => {
     if (!hasTheme) changeTheme(EThemes.LIGHT);
-  }, []);
-  
+  }, [hasTheme]);
+
   return <Routes />;
 }
 

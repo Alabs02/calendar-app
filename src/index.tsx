@@ -18,7 +18,7 @@ ReactDOM.render(
     <Main />
     {/* </ReduxProvider> */}
   </React.StrictMode>,
-  root
+  root,
 );
 
 reportWebVitals();
