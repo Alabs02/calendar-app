@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 
 // ENUMS
-import { EThemes } from "./enums";
+import { EThemes } from "@/enums";
 
 // ROUTES
-import Routes from "./routes";
+import Routes from "@/routes";
 
 // UTILS
-import { changeTheme } from "./utils/controller";
+import { changeTheme } from "@/utils/controller";
 
 function Main() {
   const hasTheme = !!document.documentElement.classList.length;

@@ -2,13 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 // MAIN
-import Main from "./Main";
+import Main from "@/Main";
 
-import reportWebVitals from "./reportWebVitals";
+import reportWebVitals from "@/reportWebVitals";
 
 // GLOBAL STYLES
-import "./sass/app.scss";
-import "./sass/global.scss";
+import "@/sass/app.scss";
+import "@/sass/global.scss";
 
 const root = document.getElementById("root");
 
