@@ -43348,9 +43348,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = _interopRequireWildcard(require("react"));
-var _enums = require("./enums");
-var _routes = _interopRequireDefault(require("./routes"));
-var _controller = require("./utils/controller");
+var _enums = require("@/enums");
+var _routes = _interopRequireDefault(require("@/routes"));
+var _controller = require("@/utils/controller");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -43369,7 +43369,7 @@ function Main() {
 }
 var _default = Main;
 exports.default = _default;
-},{"react/jsx-runtime":"../node_modules/react/jsx-runtime.js","react":"../node_modules/react/index.js","./enums":"../src/enums/index.ts","./routes":"../src/routes/index.tsx","./utils/controller":"../src/utils/controller/index.ts"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"react/jsx-runtime":"../node_modules/react/jsx-runtime.js","react":"../node_modules/react/index.js","@/enums":"../src/enums/index.ts","@/routes":"../src/routes/index.tsx","@/utils/controller":"../src/utils/controller/index.ts"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -43527,10 +43527,10 @@ module.hot.accept(reloadCSS);
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = _interopRequireDefault(require("react"));
 var _reactDom = _interopRequireDefault(require("react-dom"));
-var _Main = _interopRequireDefault(require("./Main"));
-var _reportWebVitals = _interopRequireDefault(require("./reportWebVitals"));
-require("./sass/app.scss");
-require("./sass/global.scss");
+var _Main = _interopRequireDefault(require("@/Main"));
+var _reportWebVitals = _interopRequireDefault(require("@/reportWebVitals"));
+require("@/sass/app.scss");
+require("@/sass/global.scss");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 // MAIN
 
@@ -43541,7 +43541,7 @@ _reactDom.default.render((0, _jsxRuntime.jsx)(_react.default.StrictMode, {
   children: (0, _jsxRuntime.jsx)(_Main.default, {})
 }), root);
 (0, _reportWebVitals.default)();
-},{"react/jsx-runtime":"../node_modules/react/jsx-runtime.js","react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./Main":"../src/Main.tsx","./reportWebVitals":"../src/reportWebVitals.ts","./sass/app.scss":"../src/sass/app.scss","./sass/global.scss":"../src/sass/global.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react/jsx-runtime":"../node_modules/react/jsx-runtime.js","react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","@/Main":"../src/Main.tsx","@/reportWebVitals":"../src/reportWebVitals.ts","@/sass/app.scss":"../src/sass/app.scss","@/sass/global.scss":"../src/sass/global.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -43566,7 +43566,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52888" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54117" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
