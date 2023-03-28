@@ -1,0 +1,9 @@
+@use '../utilities' as *;
+@use '../mixins' as *;
+
+.error-msg {
+  font-size: 500;
+  font-size: toRem(15);
+  margin-top: toRem(4);
+  @include theme-aware('color', 'brand-red');
+}

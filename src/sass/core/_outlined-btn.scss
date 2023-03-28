@@ -1,0 +1,98 @@
+@use "../mixins" as mixin;
+@use "../utilities" as *;
+@use "../library" as lib;
+
+.outlined-btn {
+  display: inline-block;
+  padding: toRem(16) toRem(18);
+
+  border-style: solid;
+  border-width: toRem(2);
+
+  @include mixin.theme-aware("color", "brand-black");
+  @include mixin.theme-aware("border-color", "brand-black");
+
+  border-radius: toRem(30);
+  font-weight: 500;
+  font-size: toRem(17);
+  letter-spacing: toRem(0.2);
+
+  &:hover,
+  &:focus {
+    @include mixin.theme-aware("color", "brand-white");
+    @include mixin.theme-aware("background", "brand-black");
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  * {
+    color: inherit !important;
+  }
+
+  span {
+    font-size: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    column-gap: toRem(12);
+  }
+
+  // SIZE VARIANT
+  &--sm {
+    padding: toRem(10) toRem(16);
+    border-radius: toRem(25);
+    font-size: toRem(15);
+    letter-spacing: toRem(0.1);
+  }
+
+  &--lg {
+    padding: toRem(18) toRem(22);
+    border-radius: toRem(32);
+    font-size: toRem(18);
+  }
+
+  // COLOR VARIANT
+  &--primary {
+    @include mixin.theme-aware("color", "primary");
+    @include mixin.theme-aware("border-color", "primary");
+
+    &:hover,
+    &:focus {
+      @include mixin.theme-aware("color", "brand-white");
+      @include mixin.theme-aware("background", "primary");
+    }
+  }
+
+  &--accent-dark {
+    @include mixin.theme-aware("color", "accent-dark");
+    @include mixin.theme-aware("border-color", "accent-dark");
+
+    &:hover,
+    &:focus {
+      @include mixin.theme-aware("color", "brand-black");
+      @include mixin.theme-aware("background", "accent-dark");
+    }
+  }
+
+  &--secondary {
+    @include mixin.theme-aware("color", "brand-black");
+    @include mixin.theme-aware("border-color", "secondary");
+
+    &:hover,
+    &:focus {
+      @include mixin.theme-aware("color", "brand-black");
+      @include mixin.theme-aware("background", "secondary");
+      box-shadow: 0px 1px 1px -1px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+// @include lib.breakpoint-up(lg) {
+//   .outlined-btn {
+
+//   }
+// }

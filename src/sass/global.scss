@@ -1,3 +1,6 @@
+// LIBRARY STYLES
+@forward "library";
+
 // CORE STYLES
 @forward "core";
 
@@ -7,10 +10,8 @@
 // PAGES STYLES
 @forward "pages";
 
-/*
-  =============================================
-    GLOBALLY ACCESSIBLE STYLES
-  =============================================
-*/
-// MIXINS
-@import "mixins";
+// ERROR STYLES
+@forward "errors";
+
+// FORM STYLES
+@forward 'forms';

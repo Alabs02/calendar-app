@@ -1,0 +1,43 @@
+@use "../utilities/" as *;
+@use "../mixins/" as *;
+
+.calendar-table {
+  border-width: toRem(0.2);
+  border-style: solid;
+  width: 100%;
+  overflow: hidden;
+  border-top-left-radius: toRem(15);
+  border-top-right-radius: toRem(15);
+  box-shadow: 0px 5px 10px -3px rgba(0, 0, 0, 0.1);
+  @include theme-aware("border-color", "secondary");
+
+  &__thead {
+    box-shadow: 0px 5px 10px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  &__th {
+    padding: toRem(12);
+    font-size: toRem(14);
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: toRem(1);
+
+    display: grid;
+    place-items: start;
+  }
+
+  &__tbody {
+    margin-top: toRem(12);
+  }
+
+  &__trow {
+    width: 100%;
+    display: grid;
+    gap: toRem(4);
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  &__td {
+    width: 100%;
+  }
+}

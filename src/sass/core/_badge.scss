@@ -1,0 +1,36 @@
+@use "../utilities" as *;
+@use "../mixins" as *;
+
+.badge {
+  width: 100%;
+  height: toRem(20);
+  padding-left: toRem(4);
+
+  font-size: toRem(12);
+
+  border-left-width: toRem(3);
+  border-left-style: solid;
+
+  display: grid;
+  align-items: center;
+  justify-content: flex-start;
+
+  span {
+    width: 95%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &--primary {
+    @include theme-aware("color", "brand-black");
+    @include theme-aware("border-left-color", "primary");
+    @include theme-aware("background-color", "primary-light");
+  }
+
+  &--accent {
+    @include theme-aware("color", "brand-black");
+    @include theme-aware("border-left-color", "accent-dark");
+    @include theme-aware("background-color", "accent-light");
+  }
+}

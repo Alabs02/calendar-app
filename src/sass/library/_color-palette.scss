@@ -1,14 +1,22 @@
 $themes: (
   light: (
+    // PRIMARY
     primary: #14aaed,
+    primary-light: lighten($color: #14aaed, $amount: 45%),
+
+    //ACCENT
     accent: #ffd436,
-    secondary: #dce1eb,
+    accent-light: lighten($color: #ffd436, $amount: 35%),
     accent-dark: #ffb122,
+
+    secondary: #dce1eb,
     brand-black: #211d1e,
     brand-green: #38b349,
     brand-red: #f4756a,
     brand-indigo: #937dfb,
+    brand-white: #ffffff,
     background-color: #ffffff,
+    transparent: transparent
   ),
   // FOR DARK THEME
   dark: (),

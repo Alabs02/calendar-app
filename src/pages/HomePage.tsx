@@ -1,6 +1,10 @@
 import Readme from "../components/Readme";
 
-function App() {
+// PAGE STYLES
+import "@/sass/app.scss";
+
+
+const HomePage = () => {
   return (
     <div>
       <Readme />
@@ -8,4 +12,4 @@ function App() {
   );
 }
 
-export default App;
+export { HomePage as default };

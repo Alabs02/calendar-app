@@ -1,0 +1,44 @@
+@use '../mixins' as *;
+@use 'breakpoints' as *;
+
+.text {
+  &--primary {
+    @include theme-aware('color', 'primary');
+  }
+
+  &--accent {
+    @include theme-aware('color', 'accent');
+
+    &-dark {
+      @include theme-aware('color', 'accent-dark');
+    }
+  }
+
+  &--secondary {
+    @include theme-aware('color', 'secondary');
+  }
+
+  &--brand-black {
+    @include theme-aware('color', 'brand-black');
+  }
+
+  &--brand-green {
+    @include theme-aware('color', 'brand-green');
+  }
+
+  &--brand-red {
+    @include theme-aware('color', 'brand-red');
+  }
+
+  &--brand-indigo {
+    @include theme-aware('color', 'brand-indigo');
+  }
+
+  &--brand-white {
+    @include theme-aware('color', 'brand-white');
+  }
+
+  &--background-color {
+    @include theme-aware('color', 'background-color');
+  }
+}

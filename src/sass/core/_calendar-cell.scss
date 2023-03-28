@@ -1,0 +1,45 @@
+@use "../mixins" as *;
+@use "../utilities" as *;
+
+.calendar-cell {
+  display: block;
+  border-style: solid;
+  border-width: toRem(1);
+  @include theme-aware('border-color', 'secondary');
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: toRem(60);
+
+  &:hover {
+    @include theme-aware('color', 'primary');
+    @include theme-aware('border-color', 'primary-light');
+    @include theme-aware('background-color', 'primary-light');
+  }
+
+  &:focus {
+    @extend .calendar-cell--isSelected;
+  }
+
+  &--isNotClickable {
+    pointer-events: none;
+  }
+
+  &--isDisabled {
+    opacity: 0.3;
+  }
+
+  &--isToday {
+    @include theme-aware('color', 'brand-black');
+    @include theme-aware('border-color', 'accent');
+    @include theme-aware('background-color', 'accent');
+  }
+
+  &--isSelected {
+    @include theme-aware('color', 'brand-white');
+    @include theme-aware('border-color', 'primary');
+    @include theme-aware('background-color', 'primary');
+  }
+}

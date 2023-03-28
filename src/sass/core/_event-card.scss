@@ -1,0 +1,39 @@
+@use '../utilities' as *;
+@use '../mixins' as *;
+
+.event-card {
+  width: 100%;
+  padding: toRem(12);
+  border-radius: toRem(12);
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+
+  display: flex;
+  align-items: center;
+  column-gap: toRem(20);
+
+  &__body {
+    flex: 1 1 0%;
+  }
+
+  &__heading {
+    font-size: toRem(14);
+    letter-spacing: toRem(0.5);
+  }
+
+  &__subheading {
+    font-size: toRem(12);
+    letter-spacing: toRem(0.8);
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    margin-top: toRem(12);
+    justify-content: space-between;
+
+    &-text {
+      font-size: toRem(10);
+      letter-spacing: toRem(0.5);
+    }
+  }
+}

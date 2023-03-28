@@ -1,0 +1,57 @@
+@use '../utilities/' as *;
+@use '../mixins' as *;
+
+@mixin CalendarGrid() {
+  display: grid;
+  gap: toRem(8);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+} 
+
+.custom-calendar {
+  &__header {
+    width: 100%;
+    margin-bottom: toRem(20);
+    padding: toRem(10) toRem(0);
+    @include CalendarGrid();
+    place-items: center;
+  }
+
+  &__panel {
+    @include CalendarGrid();
+    margin-bottom: toRem(8);
+
+    &-item {
+      font-weight: 500;
+      font-size: toRem(15);
+      letter-spacing: toRem(0.1);
+      @include theme-aware('border-color', 'transparent');
+    }
+  }
+ 
+  &__icon-btn {
+    cursor: pointer;
+    width: toRem(24);
+    height: toRem(24);
+
+    * {
+      color: inherit;
+      width: inherit;
+      height: inherit;
+    }
+
+    &:hover,
+    &:focus,
+    &:focus-within {
+      @include theme-aware('color', 'primary');
+    }
+  }
+
+  &__heading {
+    font-weight: 600;
+    letter-spacing: toRem(0.2);
+  }
+
+  &__content {
+    @include CalendarGrid();
+  }
+}

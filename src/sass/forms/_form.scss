@@ -1,0 +1,8 @@
+@use '../utilities' as *;
+
+.form {
+  &__label {
+    font-size: toRem(15);
+    letter-spacing: toRem(0.5);
+  }
+}

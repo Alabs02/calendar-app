@@ -1,0 +1,1 @@
+export { days as _days } from './days.json';
