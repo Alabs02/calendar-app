@@ -3,6 +3,7 @@
 
 .calendar-cell {
   display: block;
+  position: relative;
   border-style: solid;
   border-width: toRem(1);
   @include theme-aware('border-color', 'secondary');

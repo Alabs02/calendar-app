@@ -1,35 +1,36 @@
 import { Fragment, useState } from "react";
-import { format, parse, parseISO } from 'date-fns';
+import { format, isSameDay, parse, parseISO } from "date-fns";
 
 // COMPONENTS
 import {
   OutlinedButton,
   CustomCalendar,
   CalendarTable,
-  EventCard
+  EventCard,
 } from "@/components/core";
 import { Toolbar } from "@/components/navigation";
-import { AddReminderModal } from '@/components/modals';
+import { AddReminderModal } from "@/components/modals";
 
 // ICONS
 import { PlusSmallIcon } from "@heroicons/react/24/outline";
 
 // STORE HOOKS
 import { useAppDispatch, useAppSelector } from "@/store";
-import { setCurrentMonth, setSelectedDay, setToday } from '@/store/slices/date';
+import { setCurrentMonth, setSelectedDay, setToday } from "@/store/slices/date";
+import { IEvent } from "@/store/slices/event";
 
 // TODO: Move to interface and enum folders respectively
 enum ESetDateType {
-  SET_TODAY = 'set-today',
-  SET_SELECTED_DAY = 'set-selected-day',
-  SET_CURRENT_MONTH = 'set-current-month'
+  SET_TODAY = "set-today",
+  SET_SELECTED_DAY = "set-selected-day",
+  SET_CURRENT_MONTH = "set-current-month",
 }
-
 
 const CalendarPage = () => {
   const dispatch = useAppDispatch();
-  const { today, currentMonth, selectedDay } =
-    useAppSelector((state) => state.date);
+  const { today, currentMonth, selectedDay } = useAppSelector(
+    (state) => state.date,
+  );
 
   const { events } = useAppSelector((state) => state.event);
 
@@ -56,6 +57,10 @@ const CalendarPage = () => {
 
   const handleOnCloseModal = () => setIsVisible(false);
 
+  const filteredEvent: IEvent[] = events.filter((_event) =>
+    isSameDay(parseISO(_event.date), parseISO(selectedDay)),
+  );
+
   return (
     <Fragment>
       <div className="calendar-page">
@@ -73,6 +78,7 @@ const CalendarPage = () => {
             <div className="calendar-page__calendar">
               <CustomCalendar
                 today={parseISO(today)}
+                events={events}
                 selectedDay={parseISO(selectedDay)}
                 currentMonth={currentMonth}
                 onChangeDate={handleOnChangeDate}
@@ -80,16 +86,16 @@ const CalendarPage = () => {
             </div>
 
             <div className="calendar-page__section">
-              <div className="calendar-page__heading mb-8">Schedule for {format(currentDate, 'MMMM d, yyyy')}</div>
-              {
-                events.map((_event) => (
-                  <EventCard key={_event.id} eventPayload={_event} />
-                ))
-              }
+              <div className="calendar-page__heading mb-8">
+                Schedule for {format(currentDate, "MMMM d, yyyy")}
+              </div>
+              {filteredEvent.map((_event) => (
+                <EventCard key={_event.id} eventPayload={_event} />
+              ))}
 
-              {
-                !events.length && <div className="mt-4 is-size-5">No events for this day!</div> 
-              }
+              {!filteredEvent.length && (
+                <div className="mt-4 is-size-5">No events for this day!</div>
+              )}
             </div>
           </div>
 
@@ -105,7 +111,10 @@ const CalendarPage = () => {
       </div>
 
       {/* MODALS */}
-      <AddReminderModal isVisible={isVisible} onCloseModal={handleOnCloseModal} />
+      <AddReminderModal
+        isVisible={isVisible}
+        onCloseModal={handleOnCloseModal}
+      />
     </Fragment>
   );
 };

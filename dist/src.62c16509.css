@@ -9382,6 +9382,7 @@ input:focus {
 
 .calendar-cell {
   display: block;
+  position: relative;
   border-style: solid;
   border-width: 0.0625rem;
   display: flex;
@@ -9783,6 +9784,21 @@ input:focus {
 .calendar-page__heading {
   font-weight: 700;
   font-size: 1.125rem;
+}
+.calendar-page__indicator {
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  bottom: 20%;
+  transform: translate(-20%, -50%);
+}
+.theme-light .calendar-page__indicator {
+  background-color: #211d1e !important;
+}
+.theme-dark .calendar-page__indicator {
+  background-color: !important;
 }
 
 @media only screen and (min-width: 992px) {

@@ -1,4 +1,5 @@
 @use "../library" as lib;
+@use '../mixins' as *;
 @use "../utilities" as *;
 
 .calendar-page {
@@ -34,6 +35,18 @@
   &__heading {
     font-weight: 700;
     font-size: toRem(18);
+  }
+
+  &__indicator {
+    width: toRem(4);
+    height: toRem(4);
+    border-radius: 50%;
+    @include theme-aware('background-color', 'brand-black');
+
+    position: absolute;
+    left: 50%;
+    bottom: 20%;
+    transform: translate(-20%, -50%);
   }
 }
 

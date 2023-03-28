@@ -14,6 +14,8 @@ import {
   parse,
   add,
   sub,
+  parseISO,
+  isSameDay,
 } from "date-fns";
 
 // COMPONENTS
@@ -43,6 +45,7 @@ interface ICustomCalendarProps {
   className?: string;
   selectedDay?: Date;
   currentMonth?: string;
+  events?: any[];
   onChangeDate?: (type: string, payload: Date) => void;
 }
 
@@ -51,6 +54,7 @@ const CustomCalendar: FC<ICustomCalendarProps> = ({
   selectedDay = today,
   currentMonth = format(today, "MMM-yyyy"),
   className = "",
+  events = [],
   onChangeDate,
 }) => {
   const firstDayOfCurrentMonth = parse(currentMonth, "MMM-yyyy", new Date());
@@ -149,7 +153,13 @@ const CustomCalendar: FC<ICustomCalendarProps> = ({
                 onChangeDate && onChangeDate(ESetDateType.SET_SELECTED_DAY, day)
               }
             >
-              {format(day, "d")}
+              <div className="grid place-items-center">
+                {format(day, "d")}
+
+                {events.some((_event) =>
+                  isSameDay(parseISO(_event.date), day),
+                ) && <div className="calendar-page__indicator mt-1"></div>}
+              </div>
             </CalendarCell>
           ))}
         </div>

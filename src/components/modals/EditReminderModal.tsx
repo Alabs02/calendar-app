@@ -1,4 +1,4 @@
-import { Fragment, FC, useEffect } from "react";
+import { Fragment, FC } from "react";
 import { Formik, Form, Field } from "formik";
 import { format, parse, parseISO } from "date-fns";
 import { Modal } from "react-bulma-components";
@@ -15,8 +15,6 @@ import { IEvent, IEventPayload, updateEvent } from '@/store/slices/event';
 import { OutlinedButton } from "@/components/core";
 import { TextField, TextArea } from "@/components/forms";
 import { ErrorMsg } from "@/components/errors";
-
-import {  } from '@/store/slices/event';
 
 interface IEditReminderModalProps {
   isVisible: boolean;
@@ -53,7 +51,6 @@ const EditReminderModal: FC<IEditReminderModalProps> = ({
 }) => {
   const dispatch = useAppDispatch();
 
-  const { selectedDay } = useAppSelector((state) => state.date);
   const { events } = useAppSelector((state) => state.event);
 
   const editEvent = (values: IEvent) => {
@@ -73,10 +70,6 @@ const EditReminderModal: FC<IEditReminderModalProps> = ({
       onCloseModal();
     }, 0);
   }
-
-  useEffect(() => {
-    console.log(initialFormState(eventPayload));
-  }, []);
 
   return (
     <Fragment>

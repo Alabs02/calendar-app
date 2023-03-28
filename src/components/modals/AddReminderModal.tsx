@@ -1,5 +1,5 @@
 import { Fragment, FC } from "react";
-import { Formik, Form, Field, FormikProps } from "formik";
+import { Formik, Form, Field } from "formik";
 import { format, parseISO } from "date-fns";
 import { Modal } from "react-bulma-components";
 import { object as yupObject, string as yupString } from "yup";
@@ -13,7 +13,6 @@ import {
   IEvent,
   IEventPayload,
   setEvent,
-  updateEvent,
 } from "@/store/slices/event";
 
 // COMPONENTS
