@@ -15,12 +15,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "sourceMap": true,
     "types": ["node"],
     "typeRoots": ["node_modules/@types"]
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "src/tests", "src/tests/mocks", "src/setup_test.ts"],
+  "exclude": ["node_modules", "src/tests", "src/tests/mocks", "src/tests/setup_test.ts"],
   "extends": "./tsconfig.paths.json"
 }
