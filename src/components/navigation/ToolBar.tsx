@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { format, parse, startOfToday } from "date-fns";
+import { format, parse } from "date-fns";
 
 // COMPONENTS
 import { OutlinedButton } from '@/components/core';
@@ -40,7 +40,7 @@ const ToolBar = () => {
         <OutlinedButton
           size={'sm'}
           copy={'Today'}
-          onClick={() => dispatch(setCurrentMonth(format(startOfToday(), 'MMM-yyyy')))}
+          onClick={() => dispatch(setCurrentMonth(format(new Date(), 'MMM-yyyy')))}
           colorVariant={'secondary'}
           prependChildren={<CalendarDaysIcon className="w--16 h--16" />}
         />

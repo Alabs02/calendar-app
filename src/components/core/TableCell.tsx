@@ -1,21 +1,16 @@
 import { Fragment, FC, MouseEventHandler } from 'react';
-import { format } from 'date-fns';
+import { format, isSameDay, parseISO } from 'date-fns';
 import clsx from 'clsx';
 
 // COMPONENTS
 import { Badge } from '@/components/core';
+import { IEvent } from '@/store/slices/event';
 
 // INTERFACES
-interface ITableCellProps {
-  day: Date;
-  events: any[];
-  isToday?: boolean;
-  isSameMonth?: boolean;
-  isSelected?: boolean;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
-}
+import { IComponent } from '@/interfaces'
 
-const TableCell: FC<ITableCellProps> = ({
+
+const TableCell: FC<IComponent.ITableCellProps> = ({
   day,
   events,
   onClick,
@@ -30,6 +25,10 @@ const TableCell: FC<ITableCellProps> = ({
     "table-cell--isSelected": isSelected,
   };
 
+  const filteredEvent: IEvent[] = events.filter((_event) =>
+    isSameDay(parseISO(_event.date), day),
+  );
+
   return (
     <Fragment>
       <button onClick={onClick && onClick} className={clsx("table-cell", buttonClassNames)}>
@@ -38,8 +37,8 @@ const TableCell: FC<ITableCellProps> = ({
 
         <div className="table-cell__container">
           {
-            events.map((calendarEvent, index) => (
-              <Badge key={index} text={'API Connect Walk Through Meeting'} colorVariant={'accent'} />
+            filteredEvent.map((calendarEvent) => (
+              <Badge key={calendarEvent.id} text={calendarEvent.description} colorVariant={'accent'} />
             ))
           }
         </div>

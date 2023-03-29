@@ -4,6 +4,9 @@ import { format, parseISO } from "date-fns";
 import { Modal } from "react-bulma-components";
 import { object as yupObject, string as yupString } from "yup";
 
+// TOAST
+import { toast } from 'material-react-toastify';
+
 // ICONS
 import { ServerStackIcon } from "@heroicons/react/24/outline";
 
@@ -20,12 +23,9 @@ import { OutlinedButton } from "@/components/core";
 import { TextField, TextArea } from "@/components/forms";
 import { ErrorMsg } from "@/components/errors";
 
-import {} from "@/store/slices/event";
+// INTERFACES
+import { IComponent } from '@/interfaces';
 
-interface IAddReminderModalProps {
-  isVisible: boolean;
-  onCloseModal: () => void;
-}
 
 const initialFormState = () => ({
   title: "",
@@ -47,7 +47,7 @@ const formSchema = yupObject().shape({
     .required("Description is Required!"),
 });
 
-const AddReminderModal: FC<IAddReminderModalProps> = ({
+const AddReminderModal: FC<IComponent.IAddReminderModalProps> = ({
   isVisible,
   onCloseModal,
 }) => {
@@ -64,6 +64,8 @@ const AddReminderModal: FC<IAddReminderModalProps> = ({
     };
 
     dispatch(setEvent(payload));
+
+    toast.success('Reminder added successfully!');
   };
 
   return (

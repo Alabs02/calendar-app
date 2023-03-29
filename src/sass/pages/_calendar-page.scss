@@ -22,6 +22,7 @@
 
   &__main {
     grid-column: span 12 / span 12;
+    margin: toRem(40) 0;
   }
 
   &__calendar {
@@ -45,8 +46,8 @@
 
     position: absolute;
     left: 50%;
-    bottom: 20%;
-    transform: translate(-20%, -50%);
+    bottom: 15%;
+    transform: translate(-15%, -50%);
   }
 }
 
@@ -60,6 +61,12 @@
 
     &__main {
       grid-column: span 8 / span 8;
+      margin: 0 0;
+    }
+
+    &__indicator {
+      bottom: 20%;
+      transform: translate(-20%, -50%);
     }
   }
 }

@@ -1,16 +1,10 @@
 import { Fragment, FC, PropsWithChildren, MouseEventHandler } from "react";
 import clsx from "clsx";
 
-interface ICalendarCellProps extends PropsWithChildren {
-  className?: string;
-  title?: string;
-  isToday?: boolean;
-  isSameMonth?: boolean;
-  isSelected?: boolean;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
-}
+// INTERFACES
+import { IComponent } from '@/interfaces';
 
-const CalendarCell: FC<ICalendarCellProps> = ({
+const CalendarCell: FC<IComponent.ICalendarCellProps> = ({
   children,
   title,
   onClick,

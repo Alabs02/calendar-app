@@ -32,24 +32,12 @@ import {
 // JSON
 import { _days } from "@/json";
 
-// TODO: Move to interface and enum folders respectively
-enum ESetDateType {
-  SET_TODAY = "set-today",
-  SET_SELECTED_DAY = "set-selected-day",
-  SET_CURRENT_MONTH = "set-current-month",
-  SET_FIRST_DAY_OF_CURRENT_MONTH = "set-first-day-of-current-month",
-}
+// INTERFACES
+import { ESetDateType } from '@/enums';
+import { IComponent } from '@/interfaces';
 
-interface ICustomCalendarProps {
-  today?: Date;
-  className?: string;
-  selectedDay?: Date;
-  currentMonth?: string;
-  events?: any[];
-  onChangeDate?: (type: string, payload: Date) => void;
-}
 
-const CustomCalendar: FC<ICustomCalendarProps> = ({
+const CustomCalendar: FC<IComponent.ICustomCalendarProps> = ({
   today = startOfToday(),
   selectedDay = today,
   currentMonth = format(today, "MMM-yyyy"),

@@ -4,6 +4,9 @@ import { format, parse, parseISO } from "date-fns";
 import { Modal } from "react-bulma-components";
 import { object as yupObject, string as yupString, date as yupDate } from "yup";
 
+// TOAST
+import { toast } from 'material-react-toastify';
+
 // ICONS
 import { ServerStackIcon } from "@heroicons/react/24/outline";
 
@@ -16,11 +19,7 @@ import { OutlinedButton } from "@/components/core";
 import { TextField, TextArea } from "@/components/forms";
 import { ErrorMsg } from "@/components/errors";
 
-interface IEditReminderModalProps {
-  isVisible: boolean;
-  eventPayload: IEvent;
-  onCloseModal: () => void;
-}
+import { IComponent } from '@/interfaces';
 
 const initialFormState = (eventPayload: IEvent) => ({
   id: eventPayload.id,
@@ -44,7 +43,7 @@ const formSchema = yupObject().shape({
     .required("Description is Required!"),
 });
 
-const EditReminderModal: FC<IEditReminderModalProps> = ({
+const EditReminderModal: FC<IComponent.IEditReminderModalProps> = ({
   isVisible,
   eventPayload,
   onCloseModal,
@@ -66,9 +65,7 @@ const EditReminderModal: FC<IEditReminderModalProps> = ({
 
     dispatch(updateEvent(updatedEvents));
 
-    setTimeout(() => {
-      onCloseModal();
-    }, 0);
+    toast.success('Reminder updated successfully!');
   }
 
   return (
@@ -81,6 +78,7 @@ const EditReminderModal: FC<IEditReminderModalProps> = ({
             ...values,
             date: new Date(values.date).toISOString()
           };
+
           editEvent(newValues);
 
           helpers.resetForm();

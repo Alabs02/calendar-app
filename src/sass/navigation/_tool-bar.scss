@@ -1,4 +1,6 @@
+@use '../mixins' as *;
 @use '../utilities' as *;
+@use '../library' as lib;
 
 .tool-bar {
   width: 100%;
@@ -8,7 +10,12 @@
   align-items: center;
   column-gap: toRem(32);
 
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
   box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+  @include theme-aware('background','background-color');
 
   &__media {
     width: toRem(40);
@@ -34,7 +41,7 @@
 
   &__brand-logo {
     cursor: pointer;
-    display: flex;
+    display: none;
     align-items: center;
     column-gap: toRem(10);
   }
@@ -43,5 +50,13 @@
     font-weight: 600;
     font-size: toRem(18);
     letter-spacing: toRem(0.5);
+  }
+}
+
+@include lib.breakpoint-up(lg) {
+  .tool-bar {
+    &__brand-logo {
+      display: flex;
+    }
   }
 }

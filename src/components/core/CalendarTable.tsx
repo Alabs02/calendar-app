@@ -20,22 +20,13 @@ import {
 } from "date-fns";
 
 // INTERFACES
-// TODO: Move to interface and enum folders respectively
-enum ESetDateType {
-  SET_TODAY = "set-today",
-  SET_SELECTED_DAY = "set-selected-day",
-  SET_CURRENT_MONTH = "set-current-month",
-  SET_FIRST_DAY_OF_CURRENT_MONTH = "set-first-day-of-current-month",
-}
+import { ESetDateType } from '@/enums';
+import { IComponent } from '@/interfaces';
 
-interface ICalendarTableProps {
-  today?: Date;
-  selectedDay?: Date;
-  currentMonth?: string;
-  onChangeDate?: (type: string, payload: Date) => void;
-}
 
-const CalendarTable: FC<ICalendarTableProps> = ({
+
+const CalendarTable: FC<IComponent.ICalendarTableProps> = ({
+  events,
   today = startOfToday(),
   selectedDay = today,
   currentMonth = format(today, "MMM-yyyy"),
@@ -68,7 +59,7 @@ const CalendarTable: FC<ICalendarTableProps> = ({
                 <TableCell
                   key={day.toJSON()}
                   day={day}
-                  events={[]}
+                  events={events}
                   isToday={isToday(day)}
                   isSameMonth={isSameMonth(day, firstDayOfCurrentMonth)}
                   isSelected={isEqual(day, selectedDay)}

@@ -1,11 +1,12 @@
-@use "../utilities" as *;
 @use "../mixins" as *;
+@use "../utilities" as *;
+@use '../library' as lib;
 
 .table-cell {
   width: 100%;
   display: block;
   text-align: left;
-  height: toRem(160);
+  height: toRem(120);
   padding: toRem(12);
 
   display: grid;
@@ -61,5 +62,18 @@
       -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.1);
       @include theme-aware("background-color", "secondary");
     }
+  }
+}
+
+@include lib.breakpoint-up(lg) {
+  .table-cell {
+    height: toRem(140);
+  }
+}
+
+
+@include lib.breakpoint-custom-up(1400) {
+  .table-cell {
+    height: toRem(160);
   }
 }

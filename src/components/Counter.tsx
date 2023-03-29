@@ -7,7 +7,7 @@ interface IProps {
   limit: number;
 }
 
-function Counter({ limit }: IProps): JSX.Element {
+function Counter({ limit }: IProps) {
   const [count, setCount] = React.useState(0);
   const isLimitReached = limit ? count === limit : false;
 

@@ -94,13 +94,14 @@ const CalendarPage = () => {
               ))}
 
               {!filteredEvent.length && (
-                <div className="mt-4 is-size-5">No events for this day!</div>
+                <div className="mt-4 is-size-6">No events for this day!</div>
               )}
             </div>
           </div>
 
           <div className="calendar-page__main">
             <CalendarTable
+              events={events}
               today={parseISO(today)}
               selectedDay={parseISO(selectedDay)}
               currentMonth={currentMonth}

@@ -1,31 +1,11 @@
-import { Fragment, FC, ReactNode, MouseEventHandler } from "react";
+import { Fragment, FC } from "react";
 import clsx from "clsx";
 
-enum EButtonSize {
-  SMALL = "sm",
-  MEDIUM = "md",
-  LARGE = "lg",
-}
+// INTERFACES
+import { EButtonSize, EColorVariant } from '@/enums';
+import { IComponent } from '@/interfaces';
 
-enum EColorVariant {
-  DEFAULT = "default",
-  PRIMARY = "primary",
-  ACCENT = "accent",
-  SECONDARY = "secondary",
-}
-
-interface IOutlinedButtonProps {
-  copy: string;
-  type?: "button" | "submit" | "reset";
-  className?: string;
-  appendChildren?: ReactNode;
-  prependChildren?: ReactNode;
-  size?: EButtonSize | string;
-  colorVariant?: EColorVariant | string;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
-}
-
-const OutlinedButton: FC<IOutlinedButtonProps> = ({
+const OutlinedButton: FC<IComponent.IOutlinedButtonProps> = ({
   copy,
   onClick,
   type = "button",

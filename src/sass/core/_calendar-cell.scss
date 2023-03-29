@@ -1,5 +1,6 @@
 @use "../mixins" as *;
 @use "../utilities" as *;
+@use '../library' as lib;
 
 .calendar-cell {
   display: block;
@@ -12,7 +13,7 @@
   justify-content: center;
   align-items: center;
 
-  height: toRem(60);
+  height: toRem(40);
 
   &:hover {
     @include theme-aware('color', 'primary');
@@ -44,3 +45,16 @@
     @include theme-aware('background-color', 'primary');
   }
 }
+
+@include lib.breakpoint-up(xl) {
+  .calendar-cell {
+    height: toRem(45);
+  }
+}
+
+@include lib.breakpoint-custom-up(1400) {
+  .calendar-cell {
+    height: toRem(60);
+  }
+}
+

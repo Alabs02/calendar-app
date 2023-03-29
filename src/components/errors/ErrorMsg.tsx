@@ -1,11 +1,10 @@
 import { Fragment, FC } from 'react';
 import { ErrorMessage } from 'formik';
 
-interface IErrorMsgProps {
-  name: string
-}
+// INTERFACES
+import { IComponent } from '@/interfaces';
 
-const ErrorMsg: FC<IErrorMsgProps> = ({ name }) => {
+const ErrorMsg: FC<IComponent.IErrorMsgProps> = ({ name }) => {
   return (
     <Fragment>
       <ErrorMessage name={name}>

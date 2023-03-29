@@ -52,7 +52,9 @@ export const store = configureStore({
         }).concat(logger)
       : getDefaultMiddleware({
           thunk: true,
-          serializableCheck: false,
+          serializableCheck: {
+            ignoredActions: [FLUSH, REHYDRATE, REGISTER, PURGE, PAUSE, PERSIST],
+          },
         }),
 });
 

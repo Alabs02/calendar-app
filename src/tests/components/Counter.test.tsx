@@ -1,6 +1,10 @@
-import { render, fireEvent, screen } from "@testing-library/react";
 
-import Counter from "./Counter";
+// @ts-nocheck
+import React from 'react';
+import { render, fireEvent, screen } from "@testing-library/react";
+import '@testing-library/jest-dom/extend-expect';
+
+import Counter from "../../components/Counter";
 
 test("Counter component", () => {
   render(<Counter limit={5} />);
