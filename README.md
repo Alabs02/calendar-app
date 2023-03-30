@@ -49,7 +49,8 @@ npm run start
 <br />
 
 - You can find the project running on `http://localhost:3000/calendar`.
-- [LIVE URL - JOBSITY CALENDAR SOLUTION](https://jobsity-calendar-app.vercel.app/). <br /> <br />
+- [LIVE URL - JOBSITY CALENDAR SOLUTION](https://jobsity-calendar-app.vercel.app/).
+  <br /> <br />
 
 > **OTHER COMMANDS**
 
@@ -98,18 +99,18 @@ and it has great benefits, I migrated the App to TypeScript. <br /> <br />
 
 > **REACT APP BUNDLING**
 
-Instead of using `react-scripts` which is slow I change it to
-[`Parcel`](https://parceljs.org/). Here are some benefits of percel:
+Instead of using `react-scripts` which is slow, I change it to
+[`Parcel`](https://parceljs.org/). Here are some benefits of Parcel:
 
 - Better worker processes
 - Multicore compiler
 - Fast rebuilds
 - Filesystem cache
-- Out of the box support for JS, CSS, HTML, File Assets, and more
-- No configuration needed
-- **Parcel prints syntax highlighted code frames when it encounters erros to
+- Out-of-the-box support for JS, CSS, HTML, File Assets, and more
+- No configuration is needed
+- **Parcel prints syntax highlighted code frames when it encounters errors to
   help you pinpoint the problem**
-- No configuration needed
+- No configuration is needed
 - **The Alias feature which helps you create aliases to avoid `../../components`
   to `@components/`**
 
@@ -132,9 +133,9 @@ Instead of using `react-scripts` which is slow I change it to
 Using `Prettier` and `Eslint` will prevent a lot of problems starting with
 
 - Prettier can format the entire code to look beautiful and up to the team
-  standard. Things like quotes, spacing, indentation etc.
+  standard. Things like quotes, spacing, indentation, etc.
 - Eslint helps to prevent runtime and build errors, and it's good to run
-  `npm run eslint:fix`, `npm run format:fix` and unit/e2e test before pushing
+  `npm run eslint:fix`, `npm run format:fix`, and unit/e2e test before pushing
   your codebase to git. <br /> <br />
 
 `package.json`
@@ -152,7 +153,7 @@ Using `Prettier` and `Eslint` will prevent a lot of problems starting with
 
 > **PROJECT FILE STRUCTURE**
 
-My project file structure is inspired by `Vue JS` file structure 
+My project file structure is inspired by `Vue JS` file structure
 
 <div align="center">
   <img src="https://firebasestorage.googleapis.com/v0/b/alaburausmanportfolio.appspot.com/o/Github-Assets%2Fimg%2Fcalendar-file-structure.png?alt=media&token=fd433ca1-e1ea-45f0-a7f4-dcb50a334c43"/>
@@ -164,12 +165,12 @@ My project file structure is inspired by `Vue JS` file structure
 
 My **React JS** coding style is guided by
 [Airbnb-React-Convention](https://github.com/Alabs02/Airbnb-React-Convention).
-The SCSS is guide by
+The SCSS is guided by
 [BEM Methodology](https://en.bem.info/methodology/quick-start/).
 
-I also built a **`MINI SCSSS-LIBRARY`** which has some
-`utility classes/functions, color-palette` with can be extended to support
-multiple themes.
+I also built a **`MINI SCSSS-LIBRARY`** which has some `utility
+classes/functions, color-palette with can be extended to support multiple
+themes.
 
 <br />
 <br />
@@ -177,7 +178,7 @@ multiple themes.
 > **STATE MANAGEMENT**
 
 I changed the state management library to `Redux Toolkit` and I have simple file
-structure that can accomdate robust projects with complex/large state. <br />
+structure that can accommodate robust projects with complex/large states. <br />
 <br />
 
 > **REASEON FOR ADDING BULMA CSS**
@@ -188,7 +189,8 @@ I added Bulma Css because of `time constraint`, I would have built the
 > **UNIT TEST**
 
 I was not able to write unit testing due to time constraint but, I added
-`jest.config` and `I organised the test file in the tests folder`. <br /> <br />
+`jest.config.ts` and `I organized the test file in the tests folder`. <br />
+<br />
 
 > **CONCLUSION**
 
@@ -201,6 +203,7 @@ I am open to any feedback and look forward to hearing from you. Thank you and
 cheers! 🥂 <br /> <br /> <br />
 
 > **END RESULT**
+
 <div align="center">
   <img src="https://firebasestorage.googleapis.com/v0/b/alaburausmanportfolio.appspot.com/o/Github-Assets%2Fimg%2Fcalendar-app.png?alt=media&token=6bb2e9b8-a93e-49ff-975e-3ca6d4da36bd"/>
 </div>
