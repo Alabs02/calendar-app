@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/Jobsity/ReactChallenge/main/src/assets/jobsity_logo_small.png"/>
 </div>
 
-# [JOBSITY CALENDAR APP](https://artisto-app.vercel.app/)
+# [JOBSITY CALENDAR SOLUTION](https://jobsity-calendar-app.vercel.app/)
 
 <br />
 
@@ -49,7 +49,7 @@ npm run start
 <br />
 
 - You can find the project running on `http://localhost:3000/calendar`.
-- Live URL `Nil`. <br /> <br />
+- [LIVE URL - JOBSITY CALENDAR SOLUTION](https://jobsity-calendar-app.vercel.app/). <br /> <br />
 
 > **OTHER COMMANDS**
 
